@@ -20,7 +20,7 @@ require (
 	github.com/golang-queue/queue v0.0.7
 	github.com/golang/protobuf v1.5.2
 	github.com/json-iterator/go v1.1.12
-	github.com/mattn/go-isatty v0.0.12
+	github.com/mattn/go-isatty v0.0.18
 	github.com/mitchellh/mapstructure v1.4.1
 	github.com/msalihkarakasli/go-hms-push v0.0.0-20210731212030-00e7b986815b
 	github.com/prometheus/client_golang v1.14.0
@@ -92,7 +92,7 @@ require (
 	github.com/ugorji/go/codec v1.1.7 // indirect
 	go.etcd.io/bbolt v1.3.4 // indirect
 	go.opencensus.io v0.22.5 // indirect
-	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a // indirect
+	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/genproto v0.0.0-20200825200019-8632dd797987 // indirect
 	gopkg.in/ini.v1 v1.51.0 // indirect
