@@ -5,7 +5,37 @@
 
 version: 2
 updates:
-  - package-ecosystem: "gomod" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  # Go modules
+  - package-ecosystem: "gomod"
+    directory: "/"
     schedule:
       interval: "weekly"
+      day: "wednesday"
+    open-pull-requests-limit: 3
+    labels:
+      - "dependencies"
+      - "go"
+    groups:
+      go-dependencies:
+        patterns:
+          - "*"
+
+  # Docker
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+    open-pull-requests-limit: 3
+    labels:
+      - "dependencies"
+      - "docker"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3
+    labels:
+      - "github-actions"
