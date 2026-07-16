@@ -37,3 +37,6 @@ release
 coverage.txt
 node_modules
 config.yml
+index.scip
+index.scip.json
+knowledge/.relations.json
