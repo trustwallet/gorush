@@ -107,3 +107,9 @@
 - `rpc/example/go/send/main.go` (Go)
 - `rpc/server.go` (Go)
 
+## See Also
+- [rpc](../features/rpc.md) <!-- rel:strong -->
+- [router](../features/router.md) <!-- rel:strong -->
+- [homebrewformula](../features/homebrewformula.md) <!-- rel:strong -->
+- [constitution](../constitution.md) <!-- rel:strong -->
+- [queue system](../patterns/queue-system.md) <!-- rel:strong -->

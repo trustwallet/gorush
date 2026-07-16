@@ -18,3 +18,9 @@
 - `GET /`
 - `GET /version`
 
+## See Also
+- [router](../../features/router.md) <!-- rel:strong -->
+- [rpc](../../features/rpc.md) <!-- rel:related -->
+- [get api stat app](../../code-conventions/git/get-api-stat-app.md) <!-- rel:related -->
+- [logx](../../features/logx.md) <!-- rel:weak -->
+- [config schema](../../libs/config-schema.md) <!-- rel:weak -->

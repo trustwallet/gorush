@@ -4,8 +4,12 @@
 
 ## What this repo is
 
-- Stack: Go
-- Knowledge base: 10 categories — architecture, build, ci, code-conventions, libs, observability, patterns, references, security, tests
+- **Domain**: Push notification gateway server — Trust Wallet's internal service that delivers mobile push notifications to iOS (APNs), Android (FCM), and Huawei (HMS) devices.
+- **Route here**: Tasks involving push notification delivery logic, APNs/FCM/HMS client configuration, notification payload schemas, queue-based async dispatch, or the `/api/push` HTTP endpoint.
+- **Do not route here**: Notification *routing decisions* (which users get which push) — that lives in `notification-manager-service`; mobile app push subscription management — that's in the mobile monorepo.
+- **Consumers**: `notification-manager-service` (primary caller via HTTP POST `/api/push` and gRPC `Send`); any Trust Wallet backend service that needs direct push delivery.
+- **Ships**: A Go binary (`gorush`) deployable as a Heroku app or Docker container; exposes `POST /api/push` (HTTP) and a gRPC `Send` endpoint; emits Prometheus metrics at `/metrics`.
+- **Agent map**: `main.go` = entry point; `router/` = HTTP routing; `notify/` = platform dispatch; `config/` = all credentials/config; `storage/` = delivery counter backends; `rpc/` = gRPC server; `knowledge/architecture/overview.md` = system overview.
 
 ## Repo Manifest (for agents)
 
@@ -28,9 +32,11 @@ For the structured knowledge base, see [knowledge/constitution.md](knowledge/con
 - [security](knowledge/security/index.md) — Security guidelines, authentication, and compliance
 - [tests](knowledge/tests/index.md) — Testing strategy, test patterns, and coverage standards
 
+- [features](knowledge/features/index.md) — Features
+
 ## Learnings
 
-This repo may keep a living archive of incident-derived rules in [`learnings/`](learnings/) — each file a postmortem of a real bug or a non-obvious pattern that bit once and would bite again: root cause, the rule that prevents recurrence, and tags for matching. The folder is **optional and may be absent** — create it the first time you have a learning worth saving.
+This repo may keep a living archive of incident-derived rules in ~~[`learnings/`](learnings/)~~ — each file a postmortem of a real bug or a non-obvious pattern that bit once and would bite again: root cause, the rule that prevents recurrence, and tags for matching. The folder is **optional and may be absent** — create it the first time you have a learning worth saving.
 
 **Before** investigating any bug, regression, or "weird behavior", *if a `learnings/` directory exists*:
 

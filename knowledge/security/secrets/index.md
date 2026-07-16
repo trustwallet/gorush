@@ -4,6 +4,7 @@
 
 ## Documents
 
-| Document | Source |
-|----------|--------|
-| [send huawei hms notification](send-huawei-hms-notification.md) | README.md |
+| Document | Description | Source |
+|----------|-------------|--------|
+| [send huawei hms notification](send-huawei-hms-notification.md) | Send single notification with the following command. | README.md |
+

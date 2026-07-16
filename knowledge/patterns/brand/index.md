@@ -8,6 +8,7 @@
 
 ## Documents
 
-| Document | Source |
-|----------|--------|
-| [android example](android-example.md) | README.md |
+| Document | Description | Source |
+|----------|-------------|--------|
+| [android example](android-example.md) | Send normal notification. | README.md |
+

@@ -4,6 +4,7 @@
 
 ## Documents
 
-| Document | Source |
-|----------|--------|
-| [features](features.md) | README.md |
+| Document | Description | Source |
+|----------|-------------|--------|
+| [features](features.md) | See the default [YAML config example](config/testdata/config.yml): | README.md |
+

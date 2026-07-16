@@ -30,3 +30,9 @@ classDiagram
 
 **Key Types**: Metrics
 
+## See Also
+- [config](../libs/config.md) <!-- rel:strong -->
+- [core](../libs/core.md) <!-- rel:strong -->
+- [dependency graph](../architecture/dependency-graph.md) <!-- rel:related -->
+- [project structure](../architecture/project-structure.md) <!-- rel:weak -->
+- [overview](../architecture/overview.md) <!-- rel:weak -->

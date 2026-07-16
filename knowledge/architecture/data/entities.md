@@ -16,3 +16,9 @@
 | serialize_proto_NotificationRequest | function | Request | `rpc/example/node/gorush_grpc_pb.js` | 41 |
 | deserialize_proto_NotificationRequest | function | Request | `rpc/example/node/gorush_grpc_pb.js` | 48 |
 
+## See Also
+- [push logging](../../observability/push-logging.md) <!-- rel:strong -->
+- [logx](../../features/logx.md) <!-- rel:strong -->
+- [notify](../../features/notify.md) <!-- rel:strong -->
+- [queue system](../../patterns/queue-system.md) <!-- rel:strong -->
+- [credentials](../../security/credentials.md) <!-- rel:related -->
