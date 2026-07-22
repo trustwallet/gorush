@@ -4,6 +4,7 @@
 
 ## Documents
 
-| Document | Source |
-|----------|--------|
-| [huawei notification](huawei-notification.md) | README.md |
+| Document | Description | Source |
+|----------|-------------|--------|
+| [huawei notification](huawei-notification.md) | See more detail about [Huawei Mobulse Services Push API… | README.md |
+

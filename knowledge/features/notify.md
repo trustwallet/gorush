@@ -60,3 +60,9 @@ classDiagram
 
 **Key Types**: Alert, RequestPush, ResponsePush, PushNotification, Sound
 
+## See Also
+- [call graph](../architecture/call-graph.md) <!-- rel:strong -->
+- [notification dispatch](../architecture/notification-dispatch.md) <!-- rel:strong -->
+- [overview](../architecture/overview.md) <!-- rel:related -->
+- [config](../libs/config.md) <!-- rel:related -->
+- [testing strategy](../tests/testing-strategy.md) <!-- rel:related -->

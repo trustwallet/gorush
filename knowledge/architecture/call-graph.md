@@ -1,5 +1,18 @@
-# Call Graph
+---
+category: architecture
+confidence: low
+documentType: explanation
+scope: repo
+contentHash: 07b765addeac
+tags: [architecture, service]
+source: architecture/call-graph.md
+verified: 2026-07-22
+splitPartIndex: 1
+splitPartTotal: 2
+canonical: true
+---
 
+## Call Graph
 <!-- sdd-knowledge-generated -->
 
 > Deterministic call graph extracted via tree-sitter (no LLM). Direct calls are resolved by lexical scope + imports; **dynamic dispatch and ambiguous name matches are withheld** rather than guessed. The `## Calls` table is `EXTRACTED` (a single resolved target). Member calls (`obj.method()`) whose method name resolves to exactly one definition repo-wide are recovered separately under `## Inferred calls` (`INFERRED` — receiver type unverified, but a single plausible target).
@@ -245,74 +258,3 @@
 | `GetIosError` | `getInt64(key: string, count: *int64)` | `(storage.IosErrorKey, …)` | 1 |
 | `GetIosSuccess` | `getInt64(key: string, count: *int64)` | `(storage.IosSuccessKey, …)` | 1 |
 | `GetTotalCount` | `getInt64(key: string, count: *int64)` | `(storage.TotalCountKey, …)` | 1 |
-
-## Graph analytics
-
-- Call edges: **50** across **259** symbols
-- Reachable from entry points (exported symbols + routes): **227**
-- Dependency cycles: **0**
-- Cross-domain bridges: **0**
-- Dead-code candidates (non-exported, zero callers, unreachable): **29**
-
-### Most-coupled symbols (god-node ranking)
-
-| Symbol | Fan-in | Fan-out | Degree |
-|--------|--------|---------|--------|
-| `routerEngine` | 3 | 6 | 9 |
-| `PushToAndroid` | 1 | 4 | 5 |
-| `PushToHuawei` | 1 | 4 | 5 |
-| `PushToIOS` | 1 | 3 | 4 |
-| `SendNotification` | 0 | 4 | 4 |
-| `GetLogPushEntry` | 1 | 2 | 3 |
-| `main` | 0 | 3 | 3 |
-| `configureHTTP2ConnHealthCheck` | 3 | 0 | 3 |
-| `InitAPNSClient` | 0 | 3 | 3 |
-| `logPush` | 3 | 0 | 3 |
-| `RunHTTPServer` | 0 | 3 | 3 |
-| `startServer` | 1 | 2 | 3 |
-| `pushHandler` | 1 | 2 | 3 |
-| `InitLog` | 0 | 2 | 2 |
-| `LogPush` | 0 | 2 | 2 |
-
-### Possible duplicate entities (name variants)
-
-> Symbol names that normalize identically — likely the same entity spelled inconsistently. Unify or distinguish in the docs.
-
-- `GET /version` / `GetVersion`
-- `Init` / `init`
-- `LogPush` / `logPush`
-
-### Dead-code candidates
-
-> Non-exported symbols with no resolved callers, unreachable from any entry point. Static analysis cannot see dynamic dispatch — verify before removing.
-
-- `init` (`logx/log.go`)
-- `main` (`main.go`)
-- `usage` (`main.go`)
-- `heartbeatHandler` (`router/server.go`)
-- `metricsHandler` (`router/server.go`)
-- `rootHandler` (`router/server.go`)
-- `versionHandler` (`router/server.go`)
-- `healthClient` (`rpc/client_grpc_health.go`)
-- `main` (`rpc/example/go/health/main.go`)
-- `main` (`rpc/example/go/send/main.go`)
-- `main` (`rpc/example/node/client.js`)
-- `deserialize_proto_HealthCheckRequest` (`rpc/example/node/gorush_grpc_pb.js`)
-- `deserialize_proto_HealthCheckResponse` (`rpc/example/node/gorush_grpc_pb.js`)
-- `deserialize_proto_NotificationReply` (`rpc/example/node/gorush_grpc_pb.js`)
-- `deserialize_proto_NotificationRequest` (`rpc/example/node/gorush_grpc_pb.js`)
-- `serialize_proto_HealthCheckRequest` (`rpc/example/node/gorush_grpc_pb.js`)
-- `serialize_proto_HealthCheckResponse` (`rpc/example/node/gorush_grpc_pb.js`)
-- `serialize_proto_NotificationReply` (`rpc/example/node/gorush_grpc_pb.js`)
-- `serialize_proto_NotificationRequest` (`rpc/example/node/gorush_grpc_pb.js`)
-- `getBadger` (`storage/badger/badger.go`)
-- `setBadger` (`storage/badger/badger.go`)
-- `getBoltDB` (`storage/boltdb/boltdb.go`)
-- `setBoltDB` (`storage/boltdb/boltdb.go`)
-- `getBuntDB` (`storage/buntdb/buntdb.go`)
-- `setBuntDB` (`storage/buntdb/buntdb.go`)
-- `getLevelDB` (`storage/leveldb/leveldb.go`)
-- `setLevelDB` (`storage/leveldb/leveldb.go`)
-- `statApp` (`storage/memory/memory.go`)
-- `getInt64` (`storage/redis/redis.go`)
-

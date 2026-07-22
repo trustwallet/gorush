@@ -9,6 +9,7 @@
 
 ## Documents
 
-| Document | Source |
-|----------|--------|
-| [download a binary](download-a-binary.md) | README.md |
+| Document | Description | Source |
+|----------|-------------|--------|
+| [download a binary](download-a-binary.md) | The pre-compiled binaries can be downloaded from [release page](https://github.com/appleboy/gorush/releases). | README.md |
+

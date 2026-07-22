@@ -4,6 +4,7 @@
 
 ## Documents
 
-| Document | Source |
-|----------|--------|
-| [get metrics](get-metrics.md) | README.md |
+| Document | Description | Source |
+|----------|-------------|--------|
+| [get metrics](get-metrics.md) | Support expose [prometheus](https://prometheus.io/) metrics. | README.md |
+

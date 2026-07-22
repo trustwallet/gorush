@@ -4,8 +4,12 @@
 
 ## What this repo is
 
-- Stack: Go
-- Knowledge base: 10 categories — architecture, build, ci, code-conventions, libs, observability, patterns, references, security, tests
+- **Domain:** Push notification gateway — receives unified JSON push requests and fans out to Apple APNs (iOS), Google FCM (Android), and Huawei HMS platform services.
+- **Route here:** when sending push notifications to mobile devices; adding/modifying push platforms; changing notification payload schemas; tuning queue backends (local/NSQ/NATS); adjusting APNs/FCM/HMS client config; fixing push delivery bugs; extending the HTTP or gRPC push API.
+- **Do not route here:** notification orchestration logic (which users to notify, event triggering) — that belongs in `notification-manager-service`; device token registration/management — that belongs in BackendX; web/browser push — see `web-push-subscription-e2e-encryption`.
+- **Consumers:** Trust Wallet internal services (notification-manager-service, BackendX announcement/transaction notification workers) POST to `https://gorush.twinternal.net/api/push`.
+- **Ships:** Single Go binary (`gorush`) deployed as a Docker container on Kubernetes (3 replicas, port 8088 HTTP + 9000 gRPC). Also available as a Homebrew formula and AWS Lambda function.
+- **Agent map:** backend infra tasks (Go); push payload schema changes; queue backend ops; observability (Prometheus metrics at `/metrics`, Grafana dashboard at `monitoring.twinternal.net/d/z1WA0STGk/gorush`); security (APNs key rotation, token masking).
 
 ## Repo Manifest (for agents)
 
@@ -28,9 +32,11 @@ For the structured knowledge base, see [knowledge/constitution.md](knowledge/con
 - [security](knowledge/security/index.md) — Security guidelines, authentication, and compliance
 - [tests](knowledge/tests/index.md) — Testing strategy, test patterns, and coverage standards
 
+- [features](knowledge/features/index.md) — Features
+
 ## Learnings
 
-This repo may keep a living archive of incident-derived rules in [`learnings/`](learnings/) — each file a postmortem of a real bug or a non-obvious pattern that bit once and would bite again: root cause, the rule that prevents recurrence, and tags for matching. The folder is **optional and may be absent** — create it the first time you have a learning worth saving.
+This repo may keep a living archive of incident-derived rules in ~~[`learnings/`](learnings/)~~ — each file a postmortem of a real bug or a non-obvious pattern that bit once and would bite again: root cause, the rule that prevents recurrence, and tags for matching. The folder is **optional and may be absent** — create it the first time you have a learning worth saving.
 
 **Before** investigating any bug, regression, or "weird behavior", *if a `learnings/` directory exists*:
 

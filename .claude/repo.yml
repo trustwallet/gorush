@@ -14,18 +14,18 @@
 schemaVersion: 1
 name: gorush
 summary: |-
-  A push notification micro server using Gin framework written in Go (Golang) and see the demo app.
+  Domain: Push notification gateway — receives unified JSON push requests and fans out to Apple APNs (iOS), Google FCM (Android), and Huawei HMS platform services.
 domain: backend-service
 status: active
 
 # Capabilities this repo is authoritative for — the sharpest routing
 # signal. Seeded from the repo name; sharpen these by hand.
-owns: [gorush]
+owns: [gorush, push-notification-gateway, apns, fcm, hms-push]
 # Keywords a task might mention that point here (seeded from knowledge categories).
-topics: [command, service, messaging, run, build, metrics, prometheus, release, test, anti-pattern, api reference, bundle, deploy, docker, git]
+topics: [push-notification, apns, fcm, firebase, huawei-hms, ios-push, android-push, gin, queue, nsq, nats, prometheus, grpc]
 
 # Repos/teams that depend on this one (curated — fill in).
-consumers: []
+consumers: [notification-manager-service, backendx]
 # Internal repos this one depends on (auto-detected from shared npm scope).
 depends_on: []
 

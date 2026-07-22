@@ -65,3 +65,9 @@ flowchart TD
 
 **Key Types**: healthClient, Health, Server
 
+## See Also
+- [dependency graph](../architecture/dependency-graph.md) <!-- rel:strong -->
+- [call graph](../architecture/call-graph.md) <!-- rel:strong -->
+- [config](../libs/config.md) <!-- rel:strong -->
+- [core](../libs/core.md) <!-- rel:related -->
+- [grpc interface](../architecture/grpc-interface.md) <!-- rel:related -->

@@ -4,7 +4,8 @@
 
 ## Documents
 
-| Document | Source |
-|----------|--------|
-| [android notification payload](android-notification-payload.md) | README.md |
-| [send android notification](send-android-notification.md) | README.md |
+| Document | Description | Source |
+|----------|-------------|--------|
+| [android notification payload](android-notification-payload.md) | See more detail about [Firebase Cloud Messaging HTTP Protocol… | README.md |
+| [send android notification](send-android-notification.md) | Send single notification with the following command. | README.md |
+
